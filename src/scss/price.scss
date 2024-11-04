@@ -1,0 +1,254 @@
+.price {
+  position: relative;
+  &__price-prev {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0 40px;
+  }
+}
+
+.price-slider {
+  position: relative;
+  width: 100%;
+  &__wrapper {
+    padding: 16px 0 24px;
+  }
+
+  &__wrapper-title {
+    align-self: flex-start;
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 20px;
+    right: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    color: $textWhite;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 200%;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+    border-radius: 16px;
+    background: $colorBtIcon;
+    align-self: flex-end;
+    outline: none;
+    transition: outline 0.1s ease-in-out;
+    @media (min-width: 768px) {
+      transform: translateY(25%);
+    }
+  }
+
+  &__btn svg {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &__btn path {
+    transition: transform 0.1s ease-in-out;
+  }
+
+  &__btn:active path {
+    transform: translateX(8px);
+  }
+
+  &__btn:focus-visible {
+    outline: none;
+    border-radius: 50%;
+    outline-offset: 5px;
+    outline: 1px solid $colorBtIcon;
+  }
+}
+
+.price-slider {
+  &__slide {
+    height: auto;
+    padding: 16px;
+  }
+
+  &__content {
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 16px;
+    @media (min-width: 768px) {
+      align-self: center;
+      flex-direction: row;
+    }
+  }
+
+  &__object {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__subhead {
+    color: $colorOtherText;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 114.286%;
+  }
+}
+
+.desc {
+  color: $colorBodyText;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 128.571%;
+  letter-spacing: 0.2px;
+}
+
+.price-prev {
+  &__desc {
+    max-width: 452px;
+    line-height: 142.857%;
+  }
+
+  &__link {
+    color: $colorBodyText;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.2px;
+  }
+
+  &__link:hover {
+    opacity: 0.5;
+  }
+
+  &__link svg {
+    vertical-align: middle;
+  }
+}
+
+.price-pagination::before {
+  content: '';
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+  width: 18px;
+  height: 100%;
+  background-color: $textWhite;
+  filter: blur(5px);
+  z-index: 1000;
+}
+
+.price__container .price-slider__slide {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  box-sizing: border-box;
+  padding: 20px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  background-color: $textWhite;
+  @media (min-width: 768px) {
+    min-height: 64px;
+    border-radius: 0;
+    border: none;
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+    }
+    &:first-child {
+      border-radius: 6px 6px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 6px 6px;
+    }
+  }
+}
+
+.price-slider .price-slider__pagination {
+  margin: 0;
+}
+
+.price-slider .price-slider__pagination {
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.price-pagination {
+  text-align: center;
+}
+
+.price-pagination .swiper-pagination-bullet-active {
+  background-color: $colorPaginationActiv;
+}
+
+.price-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: $colorPagination;
+}
+
+@media (min-width: 768px) {
+  .price-slider {
+    transition: max-height 0.5s ease;
+  }
+
+  .price-slider .expanded {
+    max-height: 1000px;
+  }
+
+  .slider-three .swiper-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    padding: 63px 0 24px;
+  }
+
+  .subhead--position,
+  .subhead-price--position,
+  .subhead-term--position {
+    position: absolute;
+    top: -41px;
+  }
+
+  .price-slider__hiden {
+    display: none;
+  }
+
+  .price-pagination::before {
+    display: none;
+  }
+
+  .price-btn {
+    display: flex;
+    align-items: center;
+    color: $colorBodyText;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.2px;
+    outline: none;
+    transition: outline 0.1s ease-in-out, transform 0.2s ease-in-out,
+      color 0.1s ease-in-out;
+  }
+
+  .price-btn:focus-visible {
+    border-radius: 3px;
+    outline: 1px solid $colorBtIcon;
+  }
+
+  .price-btn:active {
+    color: darcen($colorBtIcon, 30%);
+  }
+}
+
+@media (any-pointer: fine) and (any-hover: hover) {
+  .price-slider {
+    &__btn:hover svg {
+      transform: scale(1.2);
+    }
+  }
+
+  .price-btn:hover {
+    transform: scale(1.2);
+  }
+}

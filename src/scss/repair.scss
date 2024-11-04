@@ -1,0 +1,179 @@
+.repair {
+  &__subtitle {
+    color: $colorBodyText;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.2px;
+  }
+  &__btn {
+    display: none;
+    @media (min-width: 768px) {
+      display: inline-flex;
+      align-items: center;
+      .repair-arrow {
+        transition: transform 0.1s ease;
+      }
+    }
+  }
+}
+
+.repair {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.repair-slider {
+  width: 100%;
+  &__wrapper {
+    padding: 16px 0 24px;
+  }
+
+  &__wrapper-title {
+    align-self: flex-start;
+  }
+
+  &__btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    align-self: flex-end;
+    outline: none;
+    transition: outline 0.1s ease-in-out;
+  }
+
+  &__btn svg {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &__btn path {
+    transition: transform 0.1s ease-in-out;
+  }
+
+  &__btn:active path {
+    transform: translateX(8px);
+  }
+
+  &__btn:focus-visible {
+    outline: none;
+    border-radius: 50%;
+    outline-offset: 5px;
+    outline: 1px solid $colorBtIcon;
+  }
+}
+
+.repair-pagination::before {
+  content: '';
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+  width: 18px;
+  height: 100%;
+  background-color: $textWhite;
+  filter: blur(5px);
+  z-index: 1000;
+}
+
+.repair__container .repair-slider__slide {
+  width: 100%;
+  height: 160px;
+  box-sizing: border-box;
+  padding: 20px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  background-color: $textWhite;
+}
+
+.repair-slider .repair-slider__pagination {
+  margin: 0;
+}
+
+.repair-slider .repair-slider__pagination {
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.repair-pagination {
+  text-align: center;
+}
+
+.repair-pagination .swiper-pagination-bullet-active {
+  background-color: $colorPaginationActiv;
+}
+
+.repair-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: $colorPagination;
+}
+
+@media (min-width: 768px) {
+  .repair-slider {
+    max-height: 200px; /* Начальное состояние */
+    transition: max-height 0.4s ease; /* Плавный переход */
+  }
+
+  .slider-two .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(224px, 1fr));
+    padding: 24px 0;
+    gap: 16px 24px;
+  }
+
+  .repair-pagination::before {
+    display: none;
+  }
+
+  .repair-btn {
+    display: flex;
+    align-items: center;
+    color: $colorBodyText;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.2px;
+    outline: none;
+    transition: outline 0.1s ease-in-out, transform 0.2s ease-in-out,
+      color 0.1s ease-in-out;
+  }
+
+  .repair-btn:focus-visible {
+    border-radius: 3px;
+    outline: 1px solid $colorBtIcon;
+  }
+
+  .repair-btn:active {
+    color: darcen($colorBtIcon, 30%);
+  }
+}
+
+@media (min-width: 1440px) {
+  .repair-slider {
+    max-height: 200px;
+    transition: max-height 0.5s ease;
+  }
+
+  .repair-slider .expanded {
+    max-height: 1000px;
+  }
+
+  .slider-two .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+    gap: 16px 32px;
+  }
+}
+
+@media (any-pointer: fine) and (any-hover: hover) {
+  .repair-slider {
+    &__btn:hover svg {
+      transform: scale(1.2);
+    }
+  }
+
+  .repair-btn:hover {
+    transform: scale(1.2);
+  }
+}

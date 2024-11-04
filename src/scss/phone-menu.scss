@@ -1,0 +1,79 @@
+.phone-menu {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  &__container {
+    position: fixed;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    padding: 24px 16px;
+    background-color: $textWhite;
+    transform: translateX(100%);
+  }
+
+  &__btn-close {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    color: $colorBodyText;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 133.333%;
+    letter-spacing: -0.6px;
+  }
+
+  &__form {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  &__input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    background: $textWhite;
+    &::placeholder {
+      color: $colorOtherText;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  &__desc {
+    color: $colorOtherText;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 114.286%;
+  }
+
+  &__desc--pink {
+    color: $colorBtIcon;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+
+  &__btn-send {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 13px;
+    margin-left: auto;
+    padding: 7px 20px;
+    border-radius: 16px;
+    background: $colorBtIcon;
+    color: $textWhite;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 200%;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+  }
+}
